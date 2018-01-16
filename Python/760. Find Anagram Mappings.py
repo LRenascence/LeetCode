@@ -34,7 +34,3 @@ class Solution:
             index = B.index(a)
             result.append(index)
         return result
-
-A = [12, 28, 46, 32, 50]
-B = [50, 12, 32, 46, 28]
-C =
