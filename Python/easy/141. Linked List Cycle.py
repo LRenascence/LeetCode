@@ -29,6 +29,30 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
+        if head == None:
+            return False
         slow = head
         fast = head
-        while fast.next != None and fast.next.next != None
+        while fast.next != None and fast.next.next != None:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                return True
+        return False
+# two pointer solution 2
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if head == None or head.next == None:
+            return False
+        slow = head
+        fast = head.next
+        while fast.next != None and fast.next.next != None:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                return True
+        return False
