@@ -31,6 +31,16 @@ class Solution:
             return None
         if curSum + root.val == self.sum and not root.left and not root.right:
             self.flag = True
-        leftSum = self.getPathSum(root.left, curSum + root.val)
-        rightSum = self.getPathSum(root.right, curSum + root.val)
+        self.getPathSum(root.left, curSum + root.val)
+        self.getPathSum(root.right, curSum + root.val)
         return None
+
+# good solution
+class Solution:
+    def hasPathSum(self, root: 'TreeNode', sum: 'int') -> 'bool':
+        if not root:
+            return False
+        if root.val == sum and not root.left and not root.right:
+            return True
+        sum -= root.val
+        return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
