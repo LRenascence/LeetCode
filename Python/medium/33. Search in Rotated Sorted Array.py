@@ -34,7 +34,6 @@ class Solution:
         # use binary search to find the target
         begin = l
         l, r = 0, N
-        print(begin)
         while l <= r:
             mid = (l + r) // 2
             trueMid = (mid + begin) % N
