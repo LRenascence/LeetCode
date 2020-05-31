@@ -19,3 +19,16 @@ class Solution:
             nextT[T[i]] = i
         return result
             
+# using stack
+class Solution:
+    def dailyTemperatures(self, T: List[int]) -> List[int]:
+        result = [0] * len(T)
+        stackT = []
+        for i in range(len(T) - 1, -1, -1):
+            while stackT and T[i] >= T[stackT[-1]]:
+                stackT.pop()
+            if stackT:
+                result[i] = stackT[-1] - i
+            stackT.append(i)
+        return result
+            
