@@ -33,6 +33,11 @@ class Solution {
 
 class Solution {
     public int numberOfSteps (int num) {
-        return Integer.bitCount(num) + (31 - Integer.numberOfLeadingZeros(num));
+        if (num == 0) {
+            return 0;
+        }
+        else {
+            return Integer.bitCount(num) + (31 - Integer.numberOfLeadingZeros(num));
+        }
     }
 }
